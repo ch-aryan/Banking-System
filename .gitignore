@@ -1,0 +1,38 @@
+# IntelliJ
+.idea/
+*.iml
+
+
+# Maven
+target/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+application-local.properties
+
+# Java
+*.class
+
+# VS Code
+.vscode/
+
+# Generated
+out/
+
+# Temporary files
+*.tmp
+*.bak
+
+# IntelliJ caches
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Maven Wrapper JAR (keep the scripts, ignore the downloaded jar if regenerated)
+.mvn/wrapper/maven-wrapper.jar
