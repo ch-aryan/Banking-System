@@ -4,6 +4,23 @@
 
 ---
 
+## Table of Contents
+
+- [Why this project exists](#why-this-project-exists)
+- [Project Goal](#project-goal)
+- [What makes this project different?](#what-makes-this-project-different)
+- [What you will learn](#what-you-will-learn)
+- [Project Philosophy](#project-philosophy)
+- [Learning Approach](#learning-approach)
+- [Where Should I Start?](#where-should-i-start)
+- [Project Roadmap](#project-roadmap)
+- [Documentation](#documentation)
+- [Who is this project for?](#who-is-this-project-for)
+- [Current Version](#current-version)
+- [A Note on AI](#a-note-on-ai)
+- [Final Note](#final-note)
+---
+
 ## Why this project exists
 
 When I started learning Java, I understood the syntax, classes, objects, methods, and OOP concepts. Everything looked simple while learning from tutorials.
@@ -28,7 +45,7 @@ This project was created to answer those questions.
 
 ---
 
-# Project Goal
+## Project Goal
 
 This is **not** another banking system project.
 
@@ -46,7 +63,7 @@ Every refactoring solves a real problem.
 
 ---
 
-# What makes this project different?
+## What makes this project different?
 
 Most beginner projects are very small.
 
@@ -70,7 +87,7 @@ By answering these questions while building the project, we gradually move from 
 
 ---
 
-# What you will learn
+## What you will learn
 
 This repository focuses on much more than writing Java code.
 
@@ -101,7 +118,7 @@ Topics include:
 
 ---
 
-# Project Philosophy
+## Project Philosophy
 
 One simple rule guides this project.
 
@@ -121,9 +138,7 @@ Every improvement should solve a real problem.
 
 This way, design patterns and software architecture become natural solutions instead of concepts that are memorized.
 
----
-
-# Learning Approach
+## Learning Approach
 
 This project follows a simple cycle.
 
@@ -160,71 +175,125 @@ The goal is not only to make the program work.
 The goal is to understand **why experienced software engineers design software the way they do.**
 
 ---
+## Where Should I Start?
+
+This repository is designed as a step-by-step learning journey.
+
+Each version introduces new software engineering concepts while preserving the previous learning experience.
+
+If you are following this project for learning, **do not jump directly to the latest version.**
+
+Instead, follow the versions in order.
+
+## Learning Journey
+
+V0 → V1 → V2 → V3 → Spring Boot
+
+Every version explains:
+• What we built
+• Why we built it
+• Problems in the current design
+• How the next version improves it
+• Lessons learned
+
+ Future versions of this repository will be tagged using Git tags (for example `v0.0`, `v1.0`, `v2.0`) so learners can always revisit a specific stage of the project and compare how the architecture evolved over time.
+
+---
 
 # Project Roadmap
 
-### Phase 1 — Core Java Foundations
+Version 0
 
-- User Registration
-- Login System
-- Bank Account
-- Deposit
-- Withdrawal
-- Session Handling
-- Validation Rules
+↓
 
-### Phase 2 — Better Design
+First Working Banking System
 
-- Refactor Main Class
-- Repository Layer
-- Better Object Relationships
-- Separation of Responsibilities
+↓
 
-### Phase 3 — Banking Features
+Version 1
 
-- Transaction History
-- Mini Statement
-- Money Transfer
-- Account Search
+↓
 
-### Phase 4 — Software Engineering
+Architecture Refactoring
 
-- SOLID Principles
-- Design Patterns
-- Exception Handling
-- Logging
+↓
 
-### Phase 5 — Enterprise Development
+Version 2
 
-- PostgreSQL
-- Spring Boot
-- REST APIs
-- Authentication
-- JWT
-- Docker
+↓
+
+Repository Pattern
+
+↓
+
+Version 3
+
+↓
+
+Transaction System
+
+↓
+
+Version 4
+
+↓
+
+Database
+
+↓
+
+Version 5
+
+↓
+
+Spring Boot
 
 ---
 
-# Documentation
 
-The repository also contains detailed documentation explaining the reasoning behind the implementation.
 
-Topics include:
+## Documentation
 
-- System Architecture
-- Business Rules
-- Design Decisions
-- Domain Models
-- SOLID Principles
-- Design Patterns
-- Learning Notes
-- Refactoring Journey
+Every version of this project is documented separately.
+
+The documentation explains not only **what** was built, but **why** it was built that way.
+
+```
+docs/
+
+getting-started.md
+
+roadmap.md
+
+versions/
+
+v0/
+
+v1/
+
+v2/
+
+design-decisions/
+
+architecture/
+
+learning-notes/
+```
+
+As the project evolves, the documentation grows alongside it.
 
 The purpose of these documents is to explain not only **what** was built, but **why** it was built that way.
+Every major refactoring is documented with:
+
+- The problem
+- Why the previous design was insufficient
+- The chosen solution
+- The benefits of the new design
+- The lessons learned
 
 ---
 
-# Who is this project for?
+## Who is this project for?
 
 This project is for anyone who has ever thought:
 
@@ -237,6 +306,18 @@ If you've copied code without understanding why it works...
 If you've wondered why experienced developers organize projects differently...
 
 Then this repository is for you.
+
+---
+
+## Current Version
+
+| Item | Value |
+|------|-------|
+| Current Version | **V0** |
+| Status | ✅ Complete |
+| Focus | Core Java Foundations |
+| Next Version | V1 |
+| Next Goal | Refactor architecture and reduce responsibilities from `Main` |
 
 ---
 
@@ -265,11 +346,13 @@ To me, this project represents what can happen when a curious and deliberate lea
 
 I hope more students use technology in this way: not as a shortcut to avoid thinking, but as a tool to think better.
 
-```"AI can generate code in seconds, but understanding why that code should exist is still the responsibility of the engineer." -- CH_ARYAN😊```
+> "AI can generate code in seconds, but understanding why that code should exist is still the responsibility of the engineer."
+>
+> — CH_ARYAN 😊
 
 ---
 
-# Final Note
+## Final Note
 
 This repository is not intended to demonstrate that I can build a banking system.
 
@@ -281,4 +364,22 @@ Every feature in this project is an opportunity to think, implement, refactor, a
 
 My hope is that someone who starts where I once started can use this project to connect the gap between learning Java and understanding how real software is designed.
 
+I don't expect readers to simply clone this repository.
+
+I hope they pause at every version, question every design decision, implement the ideas themselves, and build their own understanding along the way.
+
 If this project helps even one learner ask better questions and become a better engineer, then it has achieved its purpose.
+
+## Need Help?
+
+If any part of this repository feels difficult to understand, don't stop learning there.
+
+Copy the relevant section of the documentation or code into your preferred AI assistant and ask questions about it.
+
+Ask **why** a class exists, **why** a design decision was made, or **how** the implementation works.
+
+Use AI as a mentor—not as a shortcut.
+
+The more questions you ask, the deeper your understanding will become.
+
+> The quality of your learning is directly proportional to the quality of the questions you ask.
