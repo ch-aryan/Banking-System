@@ -186,7 +186,6 @@ The goal is to understand **why experienced software engineers design software t
 - Mini Statement
 - Money Transfer
 - Account Search
-- Interest Calculation
 
 ### Phase 4 — Software Engineering
 
@@ -194,11 +193,9 @@ The goal is to understand **why experienced software engineers design software t
 - Design Patterns
 - Exception Handling
 - Logging
-- File Storage
 
 ### Phase 5 — Enterprise Development
 
-- JDBC
 - PostgreSQL
 - Spring Boot
 - REST APIs
@@ -243,18 +240,32 @@ Then this repository is for you.
 
 ---
 
-# A Small Request
+## A Note on AI
 
-Don't rush through the code.
+This project would not have reached this level in such a short period of time without the help of modern AI tools, especially ChatGPT by OpenAI.
 
-Whenever you see a new class, ask yourself:
+I believe in giving credit where it is due.
 
-- Why does this class exist?
-- What responsibility does it have?
-- Could another class perform this job?
-- What problem would happen if this class didn't exist?
+AI did not build this project for me—it accelerated my learning.
 
-That habit will teach you far more than simply reading code.
+I used AI as a mentor, reviewer, and discussion partner to help me:
+
+- understand complex software engineering concepts
+- connect business rules with Java implementations
+- improve explanations and technical writing
+- challenge my design decisions
+- ask better questions
+- think more deeply about software architecture
+
+However, every class, every implementation, and every design decision in this repository has been studied, understood, and written by me after careful thought and experimentation.
+
+Whenever I didn't understand something, I paused, questioned it, implemented it myself, refactored it, and only then moved forward.
+
+To me, this project represents what can happen when a curious and deliberate learner uses AI responsibly—not to replace learning, but to accelerate it.
+
+I hope more students use technology in this way: not as a shortcut to avoid thinking, but as a tool to think better.
+
+"AI can generate code in seconds, but understanding why that code should exist is still the responsibility of the engineer." - > **CH_ARYAN.**
 
 ---
 
