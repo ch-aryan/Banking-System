@@ -265,7 +265,7 @@ To me, this project represents what can happen when a curious and deliberate lea
 
 I hope more students use technology in this way: not as a shortcut to avoid thinking, but as a tool to think better.
 
-```"AI can generate code in seconds, but understanding why that code should exist is still the responsibility of the engineer." - > **CH_ARYAN.**```
+```"AI can generate code in seconds, but understanding why that code should exist is still the responsibility of the engineer." -- CH_ARYAN😊```
 
 ---
 
