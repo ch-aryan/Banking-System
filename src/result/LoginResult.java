@@ -6,10 +6,10 @@ public class LoginResult {
     private static boolean success;
     private static String message;
     private static User user;
-    public LoginResult(boolean success, String message, User account){
+    public LoginResult(boolean success, String message, User user){
         this.success = success;
         this.message = message;
-        this.user = account;
+        this.user = user;
     }
     public static boolean isSuccess(){
         return success;
