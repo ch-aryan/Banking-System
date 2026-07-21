@@ -44,7 +44,7 @@ The planned features included:
 - Withdraw Money
 - Transfer Money
 - Transaction History
-- Account Validation
+- Account versions.v0.Validation
 
 At this stage, the focus was not on building every feature immediately.
 
@@ -66,7 +66,7 @@ During this version, the primary learning objectives were:
 - Encapsulation
 - Object Composition
 - Collections
-- Input Validation
+- Input versions.v0.Validation
 - Basic Package Organization
 - Separation of Responsibilities
 
@@ -86,11 +86,11 @@ As the project started growing, new responsibilities appeared.
 
 Instead of keeping everything inside a few Java files, we began separating responsibilities into packages such as:
 
-- Model
+- versions.v0.Model
 - Service
-- Validation
+- versions.v0.Validation
 - Result
-- Session
+- versions.v0.Session
 - Utility
 
 This happened naturally while solving real problems.
@@ -112,8 +112,8 @@ It includes:
 - Bank Account Creation
 - Deposit
 - Withdrawal
-- Session Management
-- Validation Rules
+- versions.v0.Session Management
+- versions.v0.Validation Rules
 - Basic Package Structure
 
 Although the application is still simple, it establishes the architecture that future versions will improve through refactoring and better software design.

@@ -32,7 +32,7 @@ Questions started appearing in my mind.
 - Why is this class separated from another?
 - Why does this constructor exist?
 - Why is this object created here instead of somewhere else?
-- Why are there service classes?
+- Why are there versions.v0.service classes?
 - Why are there repositories?
 - Why is business logic written in one place and not another?
 - Why do experienced developers structure their projects this way?
@@ -317,7 +317,7 @@ Then this repository is for you.
 | Status | ✅ Complete |
 | Focus | Core Java Foundations |
 | Next Version | V1 |
-| Next Goal | Refactor architecture and reduce responsibilities from `Main` |
+| Next Goal | Refactor architecture and reduce responsibilities from `versions.v0.Main` |
 
 ---
 

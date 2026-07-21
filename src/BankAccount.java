@@ -1,6 +1,6 @@
-//import Validation.BankValidationRules;
+//import versions.v0.Validation.BankValidationRules;
 //
-//import java.util.Scanner;
+//import java.versions.v0.util.Scanner;
 //
 //public class BankAccount {
 //    private Integer id;
