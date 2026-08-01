@@ -2,17 +2,16 @@ package versions.v1.Service;
 
 import versions.v1.result.LoginResult;
 import versions.v1.Model.User;
-import versions.v1.UserDatabaseHM;
-import versions.v1.Validation.ValidationRules;
-import versions.v1.result.UserResult;
+import versions.v1.repository.UserDatabaseHM;
+import versions.v2.Validation.UserValidationRules;
 
 
 import java.util.Scanner;
 
-public class Login {
+public class LoginService {
     Scanner in = new Scanner(System.in);
     UserDatabaseHM login;
-    public Login(UserDatabaseHM login){
+    public LoginService(UserDatabaseHM login){
         this.login = login;
     }
     public LoginResult reqLogin() {
@@ -22,10 +21,10 @@ public class Login {
         System.out.println("Enter your password");
         String passWord = in.next();
 
-     if(!ValidationRules.isValidUsername(userName)){
+     if(!UserValidationRules.isValidUsername(userName)){
          return new LoginResult(false, "Invalid useName", null);
      }
-     if(!ValidationRules.validatePassword(passWord)) {
+     if(!UserValidationRules.validatePassword(passWord)) {
          return new LoginResult(false, "Invalid password", null);
      }
 

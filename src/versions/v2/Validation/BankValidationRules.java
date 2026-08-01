@@ -1,4 +1,4 @@
-package versions.v1.Validation;
+package versions.v2.Validation;
 
 public class BankValidationRules {
 

@@ -1,4 +1,4 @@
-package versions.v1.util;
+package versions.v1.utility;
 
 public class IdGenerator {
 

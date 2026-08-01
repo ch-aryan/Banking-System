@@ -1,6 +1,7 @@
 package versions.v1.Model;
 
 import java.sql.Date;
+import java.util.*;
 
 public class BankAccount {
 
@@ -8,6 +9,7 @@ public class BankAccount {
     private final String accountHolderName;
     private final Date createdAt;
     private final Integer pin;
+    private final ArrayList<Transaction> transactionHistory;
 
     private double balance;
 
@@ -21,6 +23,7 @@ public class BankAccount {
         this.createdAt = new Date(System.currentTimeMillis());
 
         this.balance = 0.0;
+        this.transactionHistory = new ArrayList<>();//Every account automatically starts with an empty transaction history.Exactly like a real bank account.
     }
 
     // ----------------------------
@@ -38,6 +41,21 @@ public class BankAccount {
     public boolean verifyPin(int enteredPin) {
         return pin.equals(enteredPin);
     }
+
+    public void addTransaction(Transaction transaction)
+    {
+        transactionHistory.add(transaction);
+    }
+
+    public List<Transaction> getTransactionHistory()
+    {
+        return transactionHistory;
+    }
+    /*
+    I intentionally return List<Transaction> instead of ArrayList<Transaction>
+Why? Because callers only need to read the history.They don't need to know the implementation is an ArrayList.
+Programming to the interface (List) rather than the implementation (ArrayList) is a good habit and gives us flexibility later.
+     */
 
     // ----------------------------
     // Getters
@@ -91,4 +109,24 @@ public class BankAccount {
                 ", balance=" + balance +
                 '}';
     }
+    OOP Relationship
+
+Our ownership becomes
+
+User
+   ♦
+   │
+BankAccount
+      ♦
+      │
+ArrayList<Transaction>
+              ♦
+              │
+Transaction
+
+This is composition all the way down:
+
+A User owns a BankAccount.
+A BankAccount owns its transaction history.
+A Transaction cannot exist in our system without belonging to an account.
  */

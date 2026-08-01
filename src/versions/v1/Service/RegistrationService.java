@@ -3,23 +3,23 @@ package versions.v1.Service;
 
 import versions.v1.Model.BankAccount;
 import versions.v1.Model.User;
-import versions.v1.result.UserResult;
-import versions.v1.UserDatabaseHM;
-import versions.v1.Validation.ValidationRules;
-import versions.v1.util.IdGenerator;
+import versions.v1.result.RegisterResult;
+import versions.v1.repository.UserDatabaseHM;
+import versions.v2.Validation.UserValidationRules;
+import versions.v1.utility.IdGenerator;
 
 import java.time.LocalDate;
 
 
 import java.util.Scanner;
 
-public class Registration {
+public class RegistrationService {
     Scanner in = new Scanner(System.in);
     UserDatabaseHM databaseHM;
-    public Registration(UserDatabaseHM storeUser){
+    public RegistrationService(UserDatabaseHM storeUser){
         this.databaseHM = storeUser;
     }
-    public UserResult register(){
+    public RegisterResult register(){
         System.out.println("Registration form");
         System.out.println("enter your fullName");
         String fullName = in.nextLine();
@@ -51,19 +51,19 @@ public class Registration {
         System.out.println("thanks for submitting");
 
 
-        if(!ValidationRules.validateFullName(fullName)){
-            return new UserResult(false, "Enter proper name", null);
+        if(!UserValidationRules.validateFullName(fullName)){
+            return new RegisterResult(false, "Enter proper name", null);
         }
-        if(!ValidationRules.isValidUsername(username)){
-            return new UserResult(false, "please set userName properly", null);
+        if(!UserValidationRules.isValidUsername(username)){
+            return new RegisterResult(false, "please set userName properly", null);
         }
         if(databaseHM.userExist(username)){
-            return new UserResult(false, "userName already exist please" +
+            return new RegisterResult(false, "userName already exist please" +
                     "select another one", null);
         }
 
-        if(!ValidationRules.validatePassword(password)){
-            return new UserResult(false, "please set proper password", null);
+        if(!UserValidationRules.validatePassword(password)){
+            return new RegisterResult(false, "please set proper password", null);
         }
 
 
@@ -77,7 +77,7 @@ public class Registration {
         User user = new User(id, username, password, fullName, userBankAccount,dob);
 
         databaseHM.storeUser(username, user);
-        return new UserResult(true," registration done successfully",
+        return new RegisterResult(true," registration done successfully",
                 user);
     }
 }

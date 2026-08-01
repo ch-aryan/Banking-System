@@ -1,9 +1,9 @@
-package versions.v1.Validation;
+package versions.v2.Validation;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ValidationRules {
+public class UserValidationRules {
     public static boolean isValidUsername(String name) {
 
         // Regex to check valid username.

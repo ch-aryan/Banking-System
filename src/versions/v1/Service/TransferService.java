@@ -1,9 +1,11 @@
 package versions.v1.Service;
 
 import versions.v1.Model.BankAccount;
+import versions.v1.Model.Transaction;
+import versions.v1.Model.TransactionType;
 import versions.v1.Model.User;
-import versions.v1.UserDatabaseHM;
-import versions.v1.Validation.BankValidationRules;
+import versions.v1.repository.UserDatabaseHM;
+import versions.v2.Validation.BankValidationRules;
 import versions.v1.result.TransferResult;
 
 import java.util.Scanner;
@@ -118,8 +120,26 @@ public class TransferService {
         }
 
         sender.withdraw(amount);
+        Transaction senderTransaction = new Transaction(
+                TransactionType.TRANSFER,
+                amount,
+                "Transferred to Account " +
+                        receiverUser.getBankAccount().getAccountNumber(),
+                sender.getBalance()
+        );
+
+         currentUser.getBankAccount().addTransaction(senderTransaction);
 
         receiver.deposit(amount);
+        Transaction receiverTransaction = new Transaction(
+                TransactionType.RECEIVED,
+                amount,
+                "Received from Account " +
+                        currentUser.getBankAccount().getAccountNumber(),
+                receiver.getBalance()
+        );
+
+        receiverUser.getBankAccount().addTransaction(receiverTransaction);
 
         return new TransferResult(
                 true,

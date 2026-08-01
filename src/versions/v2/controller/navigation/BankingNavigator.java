@@ -1,0 +1,133 @@
+package versions.v2.controller.navigation;
+
+import versions.v2.console.screen.BalanceScreen;
+import versions.v2.console.screen.BankingMenuScreen;
+import versions.v2.console.screen.DepositScreen;
+//import versions.v2.console.screen.TransactionHistoryScreen;
+import versions.v2.console.screen.WithdrawScreen;
+import versions.v2.domain.model.User;
+
+/*
+=========================================================
+Class : BankingNavigator
+
+Layer
+Presentation Layer
+
+Responsibility
+
+Controls the authenticated user's banking
+session.
+
+Displays the Banking Menu.
+
+Navigates the user to banking operations.
+
+Ends the banking session when the user logs out.
+
+Design Principle
+
+Single Responsibility Principle
+
+Architectural Role
+
+Navigation Controller
+
+Version
+2.0
+=========================================================
+*/
+
+public class BankingNavigator {
+
+    private final BankingMenuScreen bankingMenuScreen;
+
+    private final DepositScreen depositScreen;
+
+    private final WithdrawScreen withdrawScreen;
+
+//    private final TransferScreen transferScreen;
+
+    private final BalanceScreen balanceScreen;
+
+//    private final TransactionHistoryScreen transactionHistoryScreen;
+
+    public BankingNavigator(
+            BankingMenuScreen bankingMenuScreen,
+            DepositScreen depositScreen,
+            WithdrawScreen withdrawScreen,
+//            TransferScreen transferScreen,
+            BalanceScreen balanceScreen)
+//            TransactionHistoryScreen transactionHistoryScreen)
+            {
+
+        this.bankingMenuScreen = bankingMenuScreen;
+        this.depositScreen = depositScreen;
+        this.withdrawScreen = withdrawScreen;
+//        this.transferScreen = transferScreen;
+        this.balanceScreen = balanceScreen;
+//        this.transactionHistoryScreen = transactionHistoryScreen;
+
+    }
+
+    /**
+     * Starts the authenticated banking session.
+     */
+    public void start(User user) {
+
+        boolean running = true;
+
+        while (running) {
+
+            int choice =
+                    bankingMenuScreen.show();
+
+            running =
+                    processChoice(
+                            choice,
+                            user
+                    );
+
+        }
+
+    }
+
+    /**
+     * Processes the selected banking option.
+     */
+    private boolean processChoice(
+            int choice,
+            User user) {
+
+        switch (choice) {
+
+            case 1 -> depositScreen.show(user);
+
+            case 2 -> withdrawScreen.show(user);
+
+//            case 3 -> transferScreen.show(user);
+
+            case 4 -> balanceScreen.show(user);
+
+//            case 5 -> transactionHistoryScreen.show(user);
+
+            case 6 -> {
+
+                return false;
+
+            }
+
+            default -> {
+
+                // Invalid choice handling
+                // will be added later.
+
+            }
+
+        }
+
+        return true;
+
+    }
+
+}

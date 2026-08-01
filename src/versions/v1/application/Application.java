@@ -1,7 +1,8 @@
-package versions.v1;
+package versions.v1.application;
 
 import versions.v1.Model.User;
 import versions.v1.Service.*;
+import versions.v1.repository.UserDatabaseHM;
 import versions.v1.result.*;
 
 import java.util.Scanner;
@@ -13,9 +14,9 @@ public class Application {
 
     private final UserDatabaseHM database = new UserDatabaseHM();
 
-    private final Registration registration = new Registration(database);
+    private final RegistrationService registration = new RegistrationService(database);
 
-    private final Login login = new Login(database);
+    private final LoginService login = new LoginService(database);
 
     private final DepositService depositService =
             new DepositService();
@@ -25,6 +26,9 @@ public class Application {
 
     private final TransferService transferService =
             new TransferService(database);
+
+    private final TransactionHistoryService transactionHistoryService =
+            new TransactionHistoryService();
 
     public void start() {
 
@@ -78,7 +82,7 @@ public class Application {
 
     private void registrationFlow() {
 
-        UserResult result = registration.register();
+        RegisterResult result = registration.register();
 
         System.out.println();
 
@@ -186,7 +190,8 @@ public class Application {
                     break;
 
                 case 6:
-                    System.out.println("Transaction History Coming Soon");
+                    transactionHistoryService
+                            .showTransactionHistory(currentUser);
                     break;
 
                 case 7:

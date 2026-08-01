@@ -1,8 +1,10 @@
 package versions.v1.Service;
 
 import versions.v1.Model.BankAccount;
+import versions.v1.Model.Transaction;
+import versions.v1.Model.TransactionType;
 import versions.v1.Model.User;
-import versions.v1.Validation.BankValidationRules;
+import versions.v2.Validation.BankValidationRules;
 import versions.v1.result.WithdrawlResult;
 
 import java.util.Scanner;
@@ -51,6 +53,15 @@ public class WithdrawService {
         }
 
         account.withdraw(amount);
+
+        Transaction transaction = new Transaction(
+                TransactionType.WITHDRAW,
+                amount,
+                "Cash Withdrawal",
+                account.getBalance()
+        );
+
+        account.addTransaction(transaction);
 
         return new WithdrawlResult(
                 true,

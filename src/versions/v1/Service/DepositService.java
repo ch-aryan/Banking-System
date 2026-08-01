@@ -1,8 +1,10 @@
 package versions.v1.Service;
 
 import versions.v1.Model.BankAccount;
+import versions.v1.Model.Transaction;
+import versions.v1.Model.TransactionType;
 import versions.v1.Model.User;
-import versions.v1.Validation.BankValidationRules;
+import versions.v2.Validation.BankValidationRules;
 import versions.v1.result.DepositResult;
 
 import java.util.Scanner;
@@ -50,6 +52,18 @@ public class DepositService {
         }
 
         account.deposit(amount);
+
+        Transaction transaction = new Transaction(
+                TransactionType.DEPOSIT,
+                amount,
+                "Cash Deposit",
+                account.getBalance()
+        );
+
+        account.addTransaction(transaction);
+        /*
+        Notice something.The service knows why the money increased.Therefore it creates the correct transaction.
+         */
 
         return new DepositResult(
                 true,
