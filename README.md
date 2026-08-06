@@ -313,11 +313,11 @@ Then this repository is for you.
 
 | Item | Value |
 |------|-------|
-| Current Version | **V0** |
+| Current Version | **V2** |
 | Status | ✅ Complete |
-| Focus | Core Java Foundations |
-| Next Version | V1 |
-| Next Goal | Refactor architecture and reduce responsibilities from `versions.v0.Main` |
+| Focus | Software Architecture |
+| Next Version | V3 |
+| Next Goal | Migrate to Springboot and creating production level software from   `versions.v2.Main` |
 
 ---
 
