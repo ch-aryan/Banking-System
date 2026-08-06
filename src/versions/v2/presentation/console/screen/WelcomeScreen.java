@@ -1,6 +1,6 @@
-package versions.v2.console.screen;
+package versions.v2.presentation.console.screen;
 
-import versions.v2.console.io.ConsolePrinter;
+import versions.v2.presentation.console.io.ConsolePrinter;
 
 public class WelcomeScreen {
 

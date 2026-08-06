@@ -1,20 +1,20 @@
-package versions.v2.console.screen;
+package versions.v2.presentation.console.screen;
 
-import versions.v2.console.io.ConsoleContext;
-import versions.v2.console.io.ConsolePrinter;
-import versions.v2.console.io.ConsoleReader;
+import versions.v2.presentation.console.io.ConsoleContext;
+import versions.v2.presentation.console.io.ConsolePrinter;
+import versions.v2.presentation.console.io.ConsoleReader;
 
 /*
 =========================================================
-Class : BankingMenuScreen
+Class : MainMenuScreen
 
 Layer
 Console Layer
 
 Responsibility
 
-Displays the authenticated user's banking
-menu and returns the selected option.
+Displays the application's main menu and
+returns the user's selected option.
 
 Collaborates With
 
@@ -35,13 +35,13 @@ Version
 =========================================================
 */
 
-public class BankingMenuScreen {
+public class MainMenuScreen {
 
     private final ConsoleReader reader;
 
     private final ConsolePrinter printer;
 
-    public BankingMenuScreen(
+    public MainMenuScreen(
             ConsoleContext console) {
 
         this.reader = console.getReader();
@@ -53,14 +53,11 @@ public class BankingMenuScreen {
 
         printer.blankLine();
 
-        printer.header("Banking Menu");
+        printer.header("Main Menu");
 
-        printer.println("1. Deposit");
-        printer.println("2. Withdraw");
-        printer.println("3. Transfer");
-        printer.println("4. Balance");
-        printer.println("5. Transaction History");
-        printer.println("6. Logout");
+        printer.println("1. Register");
+        printer.println("2. Login");
+        printer.println("3. Exit");
 
         printer.blankLine();
 

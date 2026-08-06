@@ -8,12 +8,16 @@ public class DepositRequest {
 
     private final double amount;
 
+    private final int pin;
+
     public DepositRequest(
             User user,
-            double amount) {
+            double amount,
+            int pin) {
 
         this.user = user;
         this.amount = amount;
+        this.pin = pin;
     }
 
     public User getUser() {
@@ -22,6 +26,10 @@ public class DepositRequest {
 
     public double getAmount() {
         return amount;
+    }
+
+    public int getPin() {
+        return pin;
     }
 
 }

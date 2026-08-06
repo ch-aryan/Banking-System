@@ -1,37 +1,23 @@
 package versions.v2.contract.request;
-/*
-=========================================================
-Class : TransferLookupRequest
 
-Layer
-DTO Layer
-
-Responsibility
-Carries the receiver account number entered
-by the sender for account verification.
-
-Design Pattern
-Data Transfer Object (DTO)
-
-Why it exists
-Allows the service to search for the receiver
-without exposing repository details to the
-Presentation Layer.
-
-Contains
-Only user input.
-
-Spring Boot Equivalent
-@RequestBody TransferLookupRequest
-=========================================================
-*/
+import versions.v2.domain.model.User;
 
 public class TransferLookupRequest {
 
+    private final User user;
+
     private final String receiverAccountNumber;
 
-    public TransferLookupRequest(String receiverAccountNumber) {
+    public TransferLookupRequest(
+            User user,
+            String receiverAccountNumber) {
+
+        this.user = user;
         this.receiverAccountNumber = receiverAccountNumber;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getReceiverAccountNumber() {

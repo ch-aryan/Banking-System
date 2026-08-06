@@ -44,18 +44,22 @@ public class RegistrationRequest {
 
     private final String password;
 
+    private final int pin;
+
     public RegistrationRequest(
             String fullName,
             String dateOfBirth,
             String gender,
             String username,
-            String password) {
+            String password,
+            int pin) {
 
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.username = username;
         this.password = password;
+        this.pin = pin;
     }
 
     public String getFullName() {
@@ -76,6 +80,10 @@ public class RegistrationRequest {
 
     public String getPassword() {
         return password;
+    }
+
+    public int getPin() {
+        return pin;
     }
 
 }

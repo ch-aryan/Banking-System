@@ -1,35 +1,10 @@
 package versions.v2.contract.request;
 
-
-/*
-=========================================================
-Class : TransferConfirmationRequest
-
-Layer
-DTO Layer
-
-Responsibility
-Carries the information required to perform
-the actual money transfer after the receiver
-has been verified.
-
-Design Pattern
-Data Transfer Object (DTO)
-
-Why it exists
-Separates receiver verification from the
-actual transfer operation.
-
-Contains
-Only information entered by the sender
-during confirmation.
-
-Spring Boot Equivalent
-@RequestBody TransferConfirmationRequest
-=========================================================
-*/
+import versions.v2.domain.model.User;
 
 public class TransferConfirmationRequest {
+
+    private final User user;
 
     private final String receiverAccountNumber;
 
@@ -38,13 +13,19 @@ public class TransferConfirmationRequest {
     private final int pin;
 
     public TransferConfirmationRequest(
+            User user,
             String receiverAccountNumber,
             double amount,
             int pin) {
 
+        this.user = user;
         this.receiverAccountNumber = receiverAccountNumber;
         this.amount = amount;
         this.pin = pin;
+    }
+
+    public User getUser() {
+        return user;
     }
 
     public String getReceiverAccountNumber() {

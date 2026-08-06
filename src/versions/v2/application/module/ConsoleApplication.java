@@ -1,10 +1,10 @@
 package versions.v2.application.module;
 
 import versions.v2.application.Bootstrap;
-import versions.v2.console.screen.WelcomeScreen;
-import versions.v2.controller.navigation.MainMenuNavigator;
+import versions.v2.presentation.console.screen.WelcomeScreen;
+import versions.v2.presentation.console.navigation.MainMenuNavigator;
 
-public class ConsoleApplication {
+public class  ConsoleApplication {
 
     private final Bootstrap bootstrap;
     private final WelcomeScreen welcomeScreen;

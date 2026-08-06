@@ -1,4 +1,4 @@
-package versions.v2.controller.authentication;
+package versions.v2.presentation.controller.authentication;
 
 import versions.v2.contract.request.RegistrationRequest;
 import versions.v2.contract.response.RegistrationResponse;

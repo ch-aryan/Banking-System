@@ -1,4 +1,4 @@
-package versions.v2.console.io;
+package versions.v2.presentation.console.io;
 
 public class ConsoleContext {
 

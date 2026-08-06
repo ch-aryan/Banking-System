@@ -6,6 +6,8 @@ import versions.v2.domain.model.BankAccount;
 import versions.v2.domain.model.User;
 import versions.v2.utility.IdGenerator;
 
+import java.time.LocalDate;
+
 /*
 =========================================================
 Class : UserFactory
@@ -44,30 +46,26 @@ public class UserFactory {
     public User create(
             RegistrationRequest request) {
 
-//        Integer userId =
-//                IdGenerator.generateUserId();
-//
-//        Integer accountNumber =
-//                IdGenerator.generateAccountNumber();
-//
-//        BankAccount bankAccount =
-//                new BankAccount(
-//                        accountNumber,
-//                        request.getFullName(),
-//                        request.getPin());
-//
-//        return new User(
-//                userId,
-//                request.getUsername(),
-//                request.getPassword(),
-//                request.getFullName(),
-//                bankAccount,
-//                request.getDateOfBirth());
-//
-//
-            // Checkpoint 1
-            // Real object creation will be implemented later.
-            return null;
-        }
-//
+        Integer userId =
+                IdGenerator.generateUserId();
+
+        Integer accountNumber =
+                IdGenerator.generateAccountNumber();
+
+        BankAccount bankAccount =
+                new BankAccount(
+                        accountNumber,
+                        request.getFullName(),
+                        request.getPin());
+
+        return new User(
+                userId,
+                request.getUsername(),
+                request.getPassword(),
+                request.getFullName(),
+                bankAccount,
+                LocalDate.parse(request.getDateOfBirth()));
+
     }
+
+}
