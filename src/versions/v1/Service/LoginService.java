@@ -3,7 +3,7 @@ package versions.v1.Service;
 import versions.v1.result.LoginResult;
 import versions.v1.Model.User;
 import versions.v1.repository.UserDatabaseHM;
-import versions.v2.Validation.UserValidationRules;
+import versions.v1.Validation.ValidationRules;
 
 
 import java.util.Scanner;
@@ -21,10 +21,10 @@ public class LoginService {
         System.out.println("Enter your password");
         String passWord = in.next();
 
-     if(!UserValidationRules.isValidUsername(userName)){
+     if(!ValidationRules.isValidUsername(userName)){
          return new LoginResult(false, "Invalid useName", null);
      }
-     if(!UserValidationRules.validatePassword(passWord)) {
+     if(!ValidationRules.validatePassword(passWord)) {
          return new LoginResult(false, "Invalid password", null);
      }
 

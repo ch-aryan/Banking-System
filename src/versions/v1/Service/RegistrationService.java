@@ -5,7 +5,7 @@ import versions.v1.Model.BankAccount;
 import versions.v1.Model.User;
 import versions.v1.result.RegisterResult;
 import versions.v1.repository.UserDatabaseHM;
-import versions.v2.Validation.UserValidationRules;
+import versions.v1.Validation.ValidationRules;
 import versions.v1.utility.IdGenerator;
 
 import java.time.LocalDate;
@@ -51,10 +51,10 @@ public class RegistrationService {
         System.out.println("thanks for submitting");
 
 
-        if(!UserValidationRules.validateFullName(fullName)){
+        if(!ValidationRules.validateFullName(fullName)){
             return new RegisterResult(false, "Enter proper name", null);
         }
-        if(!UserValidationRules.isValidUsername(username)){
+        if(!ValidationRules.isValidUsername(username)){
             return new RegisterResult(false, "please set userName properly", null);
         }
         if(databaseHM.userExist(username)){
@@ -62,7 +62,7 @@ public class RegistrationService {
                     "select another one", null);
         }
 
-        if(!UserValidationRules.validatePassword(password)){
+        if(!ValidationRules.validatePassword(password)){
             return new RegisterResult(false, "please set proper password", null);
         }
 

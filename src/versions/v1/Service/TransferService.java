@@ -5,7 +5,7 @@ import versions.v1.Model.Transaction;
 import versions.v1.Model.TransactionType;
 import versions.v1.Model.User;
 import versions.v1.repository.UserDatabaseHM;
-import versions.v2.Validation.BankValidationRules;
+import versions.v1.Validation.BankValidationRules;
 import versions.v1.result.TransferResult;
 
 import java.util.Scanner;
